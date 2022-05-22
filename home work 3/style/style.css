@@ -66,6 +66,9 @@
 	height: 267px;
 	border-radius: 30px;
 }
+.cards a{
+	text-decoration: none;
+}
 .hand{
 	width: 64px;
 	height: 68px;
