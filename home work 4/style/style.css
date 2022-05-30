@@ -32,9 +32,12 @@ body{
 	width: 50px;
 	height: 50px;
 }
-.nav1 li, .nav2 li{
+.nav1 a, .nav2 a{
+	text-decoration: none;
 	font-size: 1.25rem;
-	color: #C9D6DF;	
+	color: #C9D6DF;
+}
+.nav1 li, .nav2 li{		
 	display: inline;
 	margin-right: 1.875rem;
 }
@@ -42,14 +45,15 @@ body{
 	display: inline-block;
 }
 .nav1 {
-	position: absolute;	
-	width: 72%;
+	display: inline-block;
+	vertical-align: top;
+	width: 71%;
 	text-align: center;
 }
 .nav2 {
-	position: absolute;
-	width: 72%;
-	text-align: end;
+	display: inline-block;
+	vertical-align: top;
+	width: 22%;
 }
 .header_title{
 	text-align: center;
@@ -229,9 +233,12 @@ body{
 	font-size: 1.25rem;
 	color: #F0F5F9;
 }
-.footer li{
+.footer_box a{
+	text-decoration: none;
 	font-size: 1rem;
 	color: #C9D6DF;
+}
+.footer li{
 	list-style-type: none;
 	margin-bottom: 1rem;
 }
@@ -239,7 +246,7 @@ body{
 	margin-left: 0;
 	padding-left: 0;
 }
-.footer_box{
+.footer_box, .footer_box_social{
 	display: inline-block;
 	vertical-align: top;
 	margin: 3.25rem 0 0 6.25rem;
