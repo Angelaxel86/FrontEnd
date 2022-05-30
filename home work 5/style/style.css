@@ -153,7 +153,7 @@ main {
 }
 .item__box{
 	display: inline-block;
-	width: 45%;
+	width: 49%;
 	margin-left: 6%;
 	vertical-align: middle;
 }
@@ -162,11 +162,12 @@ main {
 	color: #353C57;
 	font-size: 2.25rem;
 	font-weight: 700;
-	border-bottom: 2px solid white;
+	border-bottom: 3px solid white;
 	margin-bottom: 10px;
+	transition: all 500ms;
 }
 .item{
-	padding: 10px 3%;
+	padding: 10px 5%;
 	background-color: #D7D7DD;
 	height: 184px;
 	color: #202846;
@@ -183,7 +184,8 @@ main {
 	background-color: #AEAEE2;
 }
 .star:hover ~.item__box .item__title{
-	border-bottom: 2px solid #AEAEE2;
+	border-bottom: 3px solid #AEAEE2;
+	transition: all 500ms;
 }
 
 /*SECTION 2*/
