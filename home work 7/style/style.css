@@ -1,0 +1,128 @@
+html{
+	font-size: 16px;
+	font-family: 'Public Sans', sans-serif;
+	font-weight: 500;
+}
+.wrap{
+	min-width: 700px;
+	max-width: 1000px;
+	margin: 0 auto;
+	border: 1px solid black;
+	padding: 64px 45px;
+}
+.wrap>h1{
+	font-weight: 700;
+	font-size: 1.5rem;
+	margin-bottom: 79px;
+}
+.wrap>p{
+	font-size: 0.875rem;
+	font-weight: 400;
+}
+.red{
+	color: red;	
+}
+.wrap>h4{
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.Information{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #D1D1D1;
+}
+.form__box1{
+	width: 45%;}
+
+select, input{
+	border: 1px solid #ADADAD;
+	border-radius: 4px;
+	width: 100%;
+	height: 50px;
+	margin-top: 20px;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+#Application, #category, #status, #parent, #Only_Indicator, #Ownership, #Case_Status, #Applicant, #Parent, #IV-D_Indicator, #Intergovernmental_Case_Category, #Intergovernmental_Case_Type{	
+	background-image: url(../img/Group.png);
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: center;
+}
+#Application{
+	color: #0050D8;
+}
+#Processed, #purged, #child_support{
+	width: 24px;
+	height: 24px;
+}
+#Processed+label, #purged+label, #child_support+label{
+	font-weight: 400;
+	vertical-align: super;
+}
+.form__box2{
+	width: 45%;
+}
+.margin_p{
+	margin-top: 160px;
+	margin-bottom: 35px;
+}
+.Maternity_Information>h4{
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.Maternity_Information__box{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #D1D1D1;
+	padding-bottom: 20px;
+}
+.Maternity_Information__box>div{
+	width: 45%;
+}
+.Official_Use>h4{
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.Official_Use__box{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #D1D1D1;
+	padding-bottom: 20px;
+}
+.Official_Use__box>div{
+	width: 45%;
+}
+#Case_Number, #Referral_Number, #Enrollment, #Worker, #Intake_Supervisor, #Owner{
+	background-image: url(../img/search-line.png);
+	background-repeat: no-repeat;
+	background-position-x: right;
+	background-position-y: center;
+}
+.System_Information>h4{
+	font-weight: 700;
+	font-size: 1.25rem;
+}
+.System_Information__box{
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #D1D1D1;
+	padding-bottom: 20px;
+	margin-bottom: 16px;
+}
+.System_Information__box>div{
+	width: 45%;
+}
+#Owner{
+	color: #0050D8;
+}
+.btn{
+	font-weight: 700;
+	font-size: 1rem;
+	color: white;
+	background-color: #0050D8;
+	border-radius: 4px;
+	padding: 9px 16px;
+	text-decoration: none;
+	float: right;
+}
