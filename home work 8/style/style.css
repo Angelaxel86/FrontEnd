@@ -1,6 +1,6 @@
 @import url("./normalize.css");
 
-html{
+body{
 	font-size: 16px;
 	font-family: 'Rosario', sans-serif;
 }
@@ -13,34 +13,41 @@ html{
 /*HEADER*/
 
 .header{
-	background-color: black;
-	height: 129px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding-right: 1rem;
-	margin-bottom: 70px;
+margin-bottom: 70px;	
 	position: sticky;
 	top: 0;
 	z-index: 1;
 }
-.header>a{
+.navbar{
+	background-color: black;
 	height: 129px;
-}
-.header__navigation{
-	display: flex;	
 	padding: 0;
-	margin: 0;
-	list-style: none;
 }
-.header__navigation li{
-	margin-left: 65px;
+.container-fluid{
+	padding-left: 0;
 }
-.header__navigation a{
+.navbar-brand{
+	padding: 0;
+}
+.navbar-toggler{
+	background-color: white;
+}
+.navbar-nav .nav-link.active{
+	color: white;
+}
+.navbar-nav{
+	width: 100%;
+	justify-content: flex-end;
+}
+.nav-item{
+	margin-left: 2%;
+}
+.nav-link{
 	color: white;
 	text-decoration: none;
 	font-size: 2.25rem;
 	font-weight: 700;
+	font-style: italic;
 }
 
 /*SECTION gallery*/
@@ -419,6 +426,9 @@ tr, td{
 	.contacts>div{
 		margin-bottom: 20px;
 	}
+	.navbar-nav .nav-link.active{
+		color: black;
+	}
 }
 
 @media screen and (min-width:769px) and (max-width: 992px){
@@ -482,4 +492,13 @@ tr, td{
 		width: 100%;
 		margin: 20px 0 0;
 	}
+	.navbar-nav .nav-link.active{
+		color: black;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	.nav-link{
+		font-size: 1.7rem;
+	}	
 }
