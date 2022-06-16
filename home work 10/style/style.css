@@ -1,0 +1,204 @@
+body{
+	background: #ECECEC;	
+}
+.header{
+	background: white;
+}
+.navbar{
+	width: 100%;
+	background: white;
+	border-bottom: 1px solid #C4C4C4;
+}
+
+.container-fluid{
+	max-width: 1220px;
+	height: 100px;
+	background: white;
+}
+.form-control{
+	max-width: 500px;
+	height: 50px;
+	background-image: url(../img/adress.png);
+    background-repeat: no-repeat;    
+    background-position-y: center;
+    padding-left: 40px;
+}
+.collapse{
+	max-width: 1000px;
+}
+.d-flex{
+	width: 100%;
+}
+.btn:nth-of-type(1){
+	margin-left: 30%;
+	--bs-btn-border-color: #EF781A;
+	--bs-btn-color: #EF781A;
+	--bs-btn-hover-bg: #EF781A;
+	--bs-btn-hover-border-color: #EF781A;
+	--bs-btn-focus-shadow-rgb: 239, 120, 26;
+	--bs-btn-active-bg: #EF781A;
+	--bs-btn-active-border-color: #EF781A;	
+}
+.btn:nth-of-type(2){
+	margin-left: 3%;
+}
+.title{
+	max-width: 1220px;
+	background: white;
+	height: 150px;
+	margin: 0 auto;
+	padding-top: 70px;
+}
+main{
+	max-width: 1220px;
+	margin: 0 auto;
+	position: relative;
+}
+.nav{
+	margin: 25px 0;
+}
+.nav-link{
+	color: #7B7B7B;
+	font-size: 1.125rem;
+	font-weight: 500;
+	border-radius: 10px;
+}
+.nav-item:hover .nav-link{
+	background-color: #C4C4C4;
+	color: #343434;
+}
+.stock h3, .burgers h3, .chicken h3, .about_partner h3{
+	margin-bottom: 30px;
+}
+.show{
+	display: none;
+}
+.card:hover .show{
+	display: inline-block;
+	margin: 0;
+	background-color: #FF6C01;
+	border-color: #FF6C01;
+}
+.card:hover .price{
+	display: none;
+}
+.price{
+	text-decoration: none;
+	color: black;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+.card-flex{
+	display: flex;
+	justify-content: space-between;
+}
+.card:hover path{
+	fill: #69A042;
+}
+.card img{
+	width: 100%;
+}
+.card{
+	padding: 0;
+	margin:0 40px 30px 0;
+	max-width: 230px;
+	height: 275px;
+	box-shadow: 1px 5px 5px #A1A1A1;
+}
+.card:nth-of-type(3){
+	margin: 0 0 30px 0;
+}
+.card:nth-of-type(3) .card-flex{
+	margin-top: 30px;
+}
+.row{
+	--bs-gutter-x: 0;
+}
+.card-body h5{
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+.card-body p{
+	font-size: .625rem;
+	font-weight: 500;
+	color: #A1A1A1;
+}
+.contacts{
+	max-width: 773px;
+	background-color: white;
+	padding: 30px;
+	border-radius: 10px;
+}
+.contacts p:nth-child(odd){
+	color: #999999;
+	font-size: .875rem;
+	margin: 0 0 8px 0;	
+}
+.contacts p:nth-child(even){
+	font-size: 1rem;
+}
+.arrow{
+	width: 50px;
+	height: 50px;
+	border-radius: 50px;
+	background-color: white;	
+	text-align: center;
+	position: fixed;
+	bottom: 0;
+}
+.btn_arrow{
+	font-size: 2rem;
+	text-decoration: none;
+	color: black;
+}
+.order{
+	background-color: white;
+	width: 30%;
+	padding: 25px 16px;
+	border-radius: 5px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+.order>p{
+	font-size: 1.125rem;
+	color: black;
+}
+.order_box{
+	display: flex;
+	justify-content: space-between;
+}
+.order_box>ul, .delivery>div:nth-of-type(1){
+	font-size: .875rem;
+	color: black;
+}
+.order_box>ul li{
+	color: #979797;
+	font-size: .75rem;
+}
+.counter{
+	font-size: 1.125rem;
+}
+.counter span{
+	display: inline-block;
+	background-color: #FF6C01;
+	border-radius: 50px;
+	width: 28px;
+	height: 28px;
+	text-align: center;
+	color: white;
+}
+.delivery{
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 30px;
+}
+#order_btn{
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	margin: 0;
+	font-size: 1.125rem;
+	font-weight: 700;
+}
