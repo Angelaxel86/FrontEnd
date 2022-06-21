@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Script</title>
+</head>
+<body>
+	<script>
+		var x, y, z;
+
+		x=6;
+		y=14;
+		z=4;
+
+		x += y - x++ * z ;
+		/*
+		1. x++ (6)
+		2. x * z (24)
+		3. y - x (-10)
+		4. x += x (-4)
+		*/
+
+		document.write("x += y - x++ * z"+ "<br />" + "x = " + x + "<br />");
+
+		x=6;
+		y=14;
+		z=4;
+
+		 z = --x - y * 5 ;
+        /*
+		1. --x (5)
+		2. y * 5 (70)
+		3. x - y (-65)
+        */
+        document.write("z = --x - y * 5 " + "<br />" + "z = " + z + "<br />");
+
+        x=6;
+		y=14;
+		z=4;
+
+		y /= x + 5 % z;
+		 /*
+		1. 5 % z (1)
+		2. x + z (7)
+		3. y /= 7 (2)
+		 */
+
+		document.write("y /= x + 5 % z " + "<br />" + "y = " + y + "<br />");
+
+		x=6;
+		y=14;
+		z=4;
+
+		z -= x++ + y * 5;
+
+		/*
+		1. x++ (6)
+		2. y * 5 (70)
+		3. x + y (76)
+		4. z -= 76 (-72)	
+		*/
+		document.write("z -= x++ + y * 5 " + "<br />" + "z = " + z + "<br />");
+
+		x=6;
+		y=14;
+		z=4;
+		
+		x = y - x++ * z;
+
+		/*
+		1. x++ (6)
+		2. x * z (24)
+		3. y - 24 (-10)		
+		*/
+		document.write("x = y - x++ * z " + "<br />" + "x = " + x + "<br />");
+	</script>
+</body>
+</html>
