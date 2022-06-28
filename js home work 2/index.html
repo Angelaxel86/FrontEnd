@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Циклы</title>
+</head>
+<body>
+	<script>		
+		var index = parseInt(prompt("Введите размер фигуры", "1"));
+		for(let i = 0; i < index; i++)
+		{
+      		for(let j = 10  ; j > 0; j--)
+      		{
+          	document.write("*")
+      		}
+      	document.write("<br>")
+  		}
+		document.write("<p>")
+	
+		
+		for(let i = 0; i < index; i++)
+		{
+      		for(let j = 0 ; j < index - i; j++)
+      			{      		
+          		document.write("*")
+      			}
+      		
+      	document.write("<br>")
+  		}
+  		document.write("<p>")
+
+
+  		for(let i = 0; i < index; i++) {
+			
+	      		for(let j = 1 ; j < index - i; j++)	{      		
+	          		document.write(" &nbsp")
+	      		}
+	      		for(let k = 0; k < i * 2 - 1; k++) {
+	      			document.write("*")
+	      		}
+	      		document.write("<br>");
+	  		}
+
+	
+		for(let i = 0; i < index; i++) {
+			if ( i < index/2) {
+	      		for(let j = 1 ; j < index - i; j++)	{      		
+	          		document.write(" &nbsp")
+	      		}
+	      		for(let k = 0; k < i * 2 - 1; k++) {
+	      			document.write("*")
+	      		}
+	      		document.write("<br>");
+	  		} else 	{				
+      				for(let j = 1 ; j < 1 + i; j++)	{      		
+          				document.write(" &nbsp")
+      				}
+      				for(let k = (index -2) *2; k > i * 2 - 1; k--) {
+	      				document.write("*")
+	      			}
+	      			document.write("<br>")  				
+	  		}	
+		}		
+  		document.write("<p>")
+
+  		// Перепишите if с использованием оператора "?":
+  		let a, b;
+  		let result = a + b < 4 ? "Мало" : "Много"
+
+  		// Перепишите if..else с использованием нескольких операторов "?":
+  		let message;
+  		let login = prompt("Введите логин", "");
+  		message = login == "Вася" ? message = "Привет" : login == "Директор" ? message = "Здравствуйте" : login == " " ? message = "Нет логина" : message = " ";
+  		document.write(message); 
+	</script>
+</body>
+</html>
