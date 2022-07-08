@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Objects</title>
+</head>
+<body>
+	<script>
+		let doc = {
+			title: "",
+			content: "",
+			footer: "",
+			date: "",
+			app: {
+				title: "",
+				content: "",
+				footer: "",
+				date: ""
+			},
+			show: function () {
+				for (let key1 in this) {
+					if (key1 !== "show" &&  key1 !== "push") {
+						if(typeof(this[key1]) === 'object'){
+							for (let key2 in this[key1]){
+								document.write(`${key1 + ": " + key2}: ${this[key1][key2]}  <br>`)
+							}							
+						} else{
+							document.write(`${key1}: ${this[key1]} <br>`)
+						}
+					}
+				}					
+			},
+			push: function (data) {
+				for (let key in data) {
+					if (key in this) {
+						this[key] = data[key]
+					}
+					for (let key1 in this){
+						if(typeof(this[key1]) === 'object') {
+							if (key in this[key1]) {
+								this[key1][key] = data[key]
+							}
+						}
+					}
+				}
+			}		
+		}
+
+		let  obj = {
+			title: "Заголовок",
+			content: "Тело",
+			footer: "Футер",
+			date: "08.07.2022"
+		}
+
+		doc.push(obj)
+		doc.show();
+	</script>
+</body>
+</html>
