@@ -21,14 +21,14 @@ function division(a=0, b=0) {
 }
 function calculate(a, b , operation) {
 	res = operation(a,b);	
-	document.querySelector('.display p').textContent = res;
-	//out.textContent = res;
+	//document.querySelector('.display p').textContent = res;
+	out.textContent = res;
 }
 function clearAll() {
 	a = '';
 	b = '';
 	sign = '';
-	document.querySelector('.display p').textContent = 0;
+	out.textContent = 0;
 }
 window.addEventListener("load", () => {
 	document.querySelector('.ac').onclick = clearAll;
@@ -39,15 +39,15 @@ window.addEventListener("load", () => {
 		if(eve.target.classList.contains('namber')) {
 			let key = eve.target.value;	
 			if(b ==='' && sign ===''){		
-			a += key;			
-			document.querySelector('.display p').textContent = a;
+				a += key;			
+				out.textContent = a;
 			} else if(a!=='' && b!=='' && and){
 				b = key;
 				and = false;
-				document.querySelector('.display p').textContent = b;
+				out.textContent = b;
 			} else {
 				b +=key;
-				document.querySelector('.display p').textContent = b;
+				out.textContent = b;
 			}
 			console.log(a, b, sign);
 		}
@@ -58,7 +58,7 @@ window.addEventListener("load", () => {
 			let key = eve.target.value;
 			sign = key;			
 			console.log(a, b, sign);
-			document.querySelector('.display p').textContent = sign;
+			out.textContent = sign;
 		}
 		//Кнопка равно
 		if(eve.target.classList.contains('result')) {
