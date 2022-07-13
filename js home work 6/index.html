@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Prototype constructor</title>
+</head>
+<body>
+	<script>
+
+		function Human (name, surname, age) {
+			this.name = name;
+			this.surname = surname;
+			this.age = age;
+			this.print = function () {
+				document.write(`name: ${this.name} <br> surname: ${this.surname} <br> age: ${this.age} <br>` )
+			}
+		}
+
+	const arrHuman = [];
+
+	arrHuman.push(new Human ("Ivan", "Ivanjv", 30));
+	arrHuman.push(new Human ("Oleg", "Petrov", 25));
+	arrHuman.push(new Human ("Elena", "Sidorova", 28));	
+	arrHuman.push(new Human ("Irina", "Vasileva", 20));	
+
+	console.log("массив: ", arrHuman);
+
+	arrHuman.sort( (a, b) => (a.age > b.age) ? 1 : -1 );
+
+	console.log("сорт: ", arrHuman);
+
+	Human.prototype.show = function () {
+		for (let key in this) {
+			if (key !== "show" && key !== "print") {
+			console.log("ключи: ", key);
+			document.write(`${key}: ${this[key]} <br>`)
+			}
+		}
+	}
+
+
+	arrHuman[1].print();
+
+	arrHuman[0].profession = "IT";
+
+	arrHuman[0].show()
+	</script>
+</body>
+</html>
