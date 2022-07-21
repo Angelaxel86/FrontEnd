@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./style/style.css">
+	<title>DOM</title>
+</head>
+<body>
+	<div id="container">
+		<input type="button" value="Нарисовать круг" id="btn">
+	</div>
+	<dic id="box_circles"></dic>
+	<script>		
+
+		const div = document.getElementById("container");
+		const btn = document.getElementById("btn");
+		const box_circles = document.getElementById("box_circles");
+
+		btn.onclick = (e) => {
+			const diameter = document.createElement("input");				
+			diameter.setAttribute("placeholder", "диаметр круга");
+			diameter.setAttribute("id", "diameter");
+			div.append(diameter);
+
+			const draw = document.createElement("input");
+			draw.setAttribute("id", "draw");
+			draw.setAttribute("type", "button");
+			draw.setAttribute("value", "Нарисовать");
+			div.append(draw);
+
+			draw.onclick = (e) => {
+				for (let i=0; i<100; i++) {
+					const circle = document.createElement("div");
+					circle.setAttribute("class", "circle");	
+					circle.style.width = `${diameter.value}px`;
+					circle.style.height = `${diameter.value}px`;
+					circle.style.backgroundColor = `#${(Math.random().toString(16) + '000000').substring(2,8).toUpperCase()}`;
+					circle.style.borderRadius = `${diameter.value}px`
+					box_circles.append(circle);
+
+					circle.onclick = (e) => {
+					e.target.remove()
+					}
+				}				
+				}
+		}
+		
+	</script>
+</body>
+</html>
