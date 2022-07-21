@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Class</title>
+</head>
+<body>
+	<script>		
+		
+		class newUser  {
+			constructor (firstName, lastName, birthday) {
+			this.firstName = firstName;
+			this.lastName = lastName;			
+			this.birthday = birthday
+			}
+			getLogin() {
+				return  (this.firstName[0] + this.lastName).toLowerCase()
+			}
+			getAge() {
+				let now = new Date();
+				let day = this.birthday[0] + this.birthday[1];
+				let month = this.birthday[3] + this.birthday[4];
+				let year = this.birthday[6] + this.birthday[7] + this.birthday[8] + this.birthday[9];
+				let age = now.getFullYear() - year;
+				return now.getMonth() < month || now.getDate() < day ? age - 1 : age;
+			}
+			getPassword() {
+				return (this.firstName[0] + this.lastName + (this.birthday[6] + this.birthday[7] + this.birthday[8] + this.birthday[9]) )
+			}	
+		}	
+		
+		function createNewUser () {
+			let firstName = prompt("Введите имя", "");
+			let lastName = prompt("Введите фамилию", "");
+			let birthday = prompt("Введите дату рождения", "dd.mm.yyyy")
+			return new newUser(firstName, lastName, birthday);
+		}
+		
+		let user = createNewUser();
+		console.log("createNewUser: ", user);
+		console.log("getLogin: ", user.getLogin() );		
+		console.log("getAge: ", user.getAge() );
+		console.log("getPassword: ", user.getPassword() );
+		
+		//Реализовать функцию фильтра массива по указанному типу данных.
+
+		let filterArr;
+
+		function filterBy (arr, type) {
+			return filterArr = arr.filter( (element) => typeof(element) !== type )
+		}
+
+		console.log("filterBy: ", filterBy( ['hello', 'world', 23, '23', null], "string") )
+
+	</script>
+	
+</body>
+</html>
