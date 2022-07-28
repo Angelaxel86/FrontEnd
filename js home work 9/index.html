@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Regular</title>
+	<link rel="stylesheet" href="./style/style.css">
+</head>
+<body>
+	<div class="container-stopwatch black" id="div">
+	    <div class="stopwatch-display"><span id="hour">00</span>:<span id=min>00</span>:<span id="sec">00</span></div>
+	    <div class="stopwatch-control"><button id="start">Start</button><button id="stop">Stop</button><button id="reset">Reset</button></div>
+	</div>
+	<script>
+		//Секундомер
+
+		const get = id => document.getElementById(id);
+
+		let sec = 0, min = 0, hour = 0, intervalHandler, block = false;		
+
+		let color = (add) => {
+			get("div").classList.remove("black", "silver", "red", "green");
+			get("div").classList.add(add);
+		}
+
+		const count = () => {
+			sec++;
+			if (sec >= 60) {
+				sec = sec - 60;
+				min++;
+			}
+			if (sec < 10) {
+				get("sec").innerText = "0" + sec;
+			} else {
+				get("sec").innerText = sec;
+			}
+			if (min >= 60) {
+				min = min - 60;
+				hour++;
+			}
+			if (min < 10) {
+				get("min").innerText = "0" + min;
+			} else {
+				get("min").innerText = min;
+			}
+			if (hour < 10) {
+				get("hour").innerText = "0" + hour;
+			}			    
+		}
+
+		get("start").onclick = () => {
+		if (block === false) {			 		
+				intervalHandler = setInterval(count, 1000);
+				color("green");
+				block = true;		
+			}
+		}
+
+		get("stop").onclick = () => {
+			clearInterval(intervalHandler);
+			color("red");
+			block = false;
+		}
+
+		get("reset").onclick = () => {
+			clearInterval(intervalHandler);
+			sec = 0;
+			get("sec").innerText = "00";
+			min = 0;
+			get("min").innerText = "00";
+			hour = 0;
+			get("hour").innerText = "00";			
+			color("silver");
+			block = false;
+		}
+
+		//Проверка телефона
+		
+		const div = document.createElement("div");
+		document.body.append(div);
+		div.setAttribute("id", "phone");
+		const input = document.createElement("input");			
+		input.setAttribute("placeholder", "000-000-00-00")
+		div.append(input);
+		const button = document.createElement("button");
+		button.innerText = "сохранить";
+		div.append(button);
+
+		button.onclick = () => {
+			let pattern = /\d{3}-\d{3}-\d{2}-\d{2}/;
+			if ( pattern.test(input.value) ) {
+				document.body.style.backgroundColor = "green";
+				document.location = "https://risovach.ru/upload/2013/03/mem/toni-stark_13447470_big_.jpeg"
+			} else {
+				const eror = document.createElement("div");
+				eror.innerText = "Eror!";
+				div.prepend(eror);
+			}
+		}
+		
+		//Слайдер
+
+		let arrImg = [
+			"https://new-science.ru/wp-content/uploads/2020/03/4848-4.jpg",
+			"https://universetoday.ru/wp-content/uploads/2018/10/Mercury.jpg",
+			"https://naukatv.ru/upload/files/shutterstock_418733752.jpg",
+			"https://cdn.iz.ru/sites/default/files/styles/900x506/public/news-2018-12/20180913_zaa_p138_057.jpg",
+			"https://nnst1.gismeteo.ru/images/2020/07/shutterstock_1450308851-640x360.jpg"
+		]
+		
+		const slider = document.createElement("div");
+		slider.setAttribute("id", "slider");
+		document.body.append(slider);
+		let img = document.createElement("img");
+		img.setAttribute("src", "https://new-science.ru/wp-content/uploads/2020/03/4848-4.jpg");
+		slider.append(img);
+
+		let i = 0;
+		function sliderImg () {
+			i++;
+			if (i === arrImg.length) i = 0;			
+			img.setAttribute( "src", arrImg[i] );
+		}
+
+		setInterval(sliderImg, 3000);
+		
+	</script>
+</body>
+</html>
