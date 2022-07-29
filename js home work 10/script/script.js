@@ -75,6 +75,7 @@ window.addEventListener("DOMContentLoaded",()=>{
 			b = '';
 			sign = '';
 			display.value = 0;
+			and = false;
 			result.setAttribute('disabled', '');
     	}
 
