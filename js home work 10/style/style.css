@@ -107,3 +107,10 @@ p {
 input[disabled] {
   opacity: .5 ;
 }
+
+#memory {
+  font-size: 18px;
+  position: absolute;
+  top: 13px;
+  left: 7px;
+}
