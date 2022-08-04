@@ -1,0 +1,13 @@
+.error{
+    border: 2px solid red;
+    background-color: rgba(255, 0, 0, .5);
+}
+
+.valid {
+    border: 2px solid green;
+    background-color: rgba(0, 255, 0, .5);
+}
+#spanError{
+    display: block;
+    margin-left: 150px;
+}
