@@ -21,24 +21,33 @@ function addEventListener (event, Listener) {
 }
 */
 
-window.addEventListener("DOMContentLoaded", () => {
-    document.body.prepend(inputs.name, inputs.phone, inputs.email, inputs.password, inputs.passwordRepeat);
+let flag = false, userInfo ={};
 
-    const spanError = document.createElement("span");
-    spanError.id = "spanError";
-    spanError.innerText = "ERROR";
+window.addEventListener("DOMContentLoaded", () => {
+    document.body.prepend(inputs.name, inputs.phone, inputs.email, inputs.password, inputs.passwordRepeat); 
 
      document.querySelectorAll("input")
         .forEach((e) => {
             e.addEventListener("change", (e) => {
-                console.log(validate(e));
-                if( validate(e) ) {
-                    spanError.remove();
+                console.log(validate(e.target.type, e.target.value));
+                if( validate(e.target.type, e.target.value) ) {
+                    if (flag) {
+                        while ( document.querySelector('.spanError') ) {
+                            document.querySelector('.spanError').remove();
+                            flag = false;
+                        }                        
+                    }
                     e.target.classList.remove('error');
                     e.target.classList.add('valid');
+                    save(e.target.type, e.target.value); //Збереження
                 } else {
+                    e.target.classList.remove('valid');
                     e.target.classList.add('error');
+                    const spanError = document.createElement("span");
+                    spanError.classList.add("spanError");
+                    spanError.innerText = "ERROR";
                     e.target.after(spanError);
+                    flag = true;
                 }
             });
         })
@@ -71,11 +80,11 @@ function cretaeInput(type = "number", className = "", placeholder = "") {
 
 //перевірка даних
 
-function validate(event) {
-    switch (event.target.type) {
-        case "text": return /^[А-яіґєїІҐЄЇ']+$/.test(event.target.value);
-        case "tel": return /^\+380\d{2}-\d{3}-\d{2}-\d{2}$/.test(event.target.value);
-        case "email": return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(event.target.value)
+function validate(eType, eValue ) {
+    switch (eType) {
+        case "text": return /^[А-яіґєїІҐЄЇ']+$/.test(eValue);
+        case "tel": return /^\+380\d{2}-\d{3}-\d{2}-\d{2}$/.test(eValue);
+        case "email": return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(eValue)
         case "password": return document.querySelectorAll(`input[type="password"]`)[0].value === document.querySelectorAll(`input[type="password"]`)[1].value
     }
 }
@@ -89,6 +98,48 @@ const inputs = {
     passwordRepeat: cretaeInput("password", "user-info", "Repeat password")
 }
 
-    const btn = document.createElement("button");
-    btn.innerText = "реєстрація";
-    document.body.append(btn)
+// Кнопка реєстрація
+const btn = document.createElement("button");
+btn.innerText = "реєстрація";
+document.body.append(btn);
+
+const btnError = document.createElement("span");
+      btnError.id = "btnError";
+      btnError.innerText = "заповніть правильно всі поля";
+
+let errors = [], flagErrors = false;
+
+window.addEventListener("DOMContentLoaded", () => {
+    const btnError = document.createElement("span");
+      btnError.id = "btnError";
+      btnError.innerText = "заповніть правильно всі поля";
+
+    btn.addEventListener('click', () => {
+        errors = [];
+        document.querySelectorAll("input")
+         .forEach( (e) => {
+            console.log(`${e.type}: ` + validate( e.type, e.value));
+            errors.push(validate( e.type, e.value));                                    
+        })
+
+       if ( errors.some(el => el === false ) ) {
+            flagErrors = true;
+            if (flagErrors) document.body.append(btnError)
+       } else {
+            if ( document.getElementById("btnError") ) {
+                document.getElementById("btnError").remove();                
+            }
+            flagErrors = false;
+            localStorage.setItem('userInfo', JSON.stringify(userInfo) );
+            console.log("storage: " +  localStorage.userInfo );
+       }    
+    })
+
+}) 
+
+//Збереження
+
+function save (type, value) {
+    if (type === "text") userInfo.name = value;
+    else userInfo[type] = value;
+}
