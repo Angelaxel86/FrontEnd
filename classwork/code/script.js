@@ -85,8 +85,17 @@ function validate(eType, eValue ) {
         case "text": return /^[А-яіґєїІҐЄЇ']+$/.test(eValue);
         case "tel": return /^\+380\d{2}-\d{3}-\d{2}-\d{2}$/.test(eValue);
         case "email": return /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test(eValue)
-        case "password": return document.querySelectorAll(`input[type="password"]`)[0].value === document.querySelectorAll(`input[type="password"]`)[1].value
+        case "password": return validatePassword();       
     }
+}
+
+function validatePassword () {
+    if (document.querySelectorAll(`input[type="password"]`)[0].value !== '' && document.querySelectorAll(`input[type="password"]`)[1].value === '') {
+        console.log('pass1')
+        return /^([A-z])\w+$/.test(document.querySelectorAll(`input[type="password"]`)[0].value);        
+    } else if (document.querySelectorAll(`input[type="password"]`)[0].value !== '' && document.querySelectorAll(`input[type="password"]`)[1].value !== '') {
+        return document.querySelectorAll(`input[type="password"]`)[0].value === document.querySelectorAll(`input[type="password"]`)[1].value;
+    }    
 }
 
 // стврення інпутів. 
