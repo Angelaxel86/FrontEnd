@@ -1,0 +1,39 @@
+.cards {
+	margin: 0 60px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 20px;
+}
+
+.card-img, .card-img-bottom, .card-img-top {
+	height: 65%;	
+}
+
+.pagination-lg {
+	justify-content: center;
+}
+
+.my-spiner {
+	margin: 0 auto;
+	width: 35px;
+}
+
+.card-title {
+	text-align: center;
+}
+
+.text-muted {
+	text-align: center;
+}
+
+.btn {	
+	position: absolute;
+	bottom: 5px;
+	color: white;	
+	width: 85%;
+	height: auto;	
+}
+
+.card-text {
+	margin-bottom: 1.5rem;
+}
