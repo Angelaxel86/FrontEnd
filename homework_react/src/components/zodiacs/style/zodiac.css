@@ -1,0 +1,15 @@
+.box-zodiacs{
+	width: 200px;
+	height: 200px;
+}
+
+.box-zodiacs img{
+	width: 100%;
+	height: 100%;
+}
+
+.box{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 50px;
+}
