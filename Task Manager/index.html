@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js/dist/chart.min.js"></script>
+
+	<link rel="stylesheet" href="./styles/style.css">
+	<title>Task Manager</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="nav-menu">
+			<div class="box-title">
+				<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M26.983 3.33337H13.0163C6.94967 3.33337 3.33301 6.95004 3.33301 13.0167V26.9667C3.33301 33.05 6.94967 36.6667 13.0163 36.6667H26.9663C33.033 36.6667 36.6497 33.05 36.6497 26.9834V13.0167C36.6663 6.95004 33.0497 3.33337 26.983 3.33337ZM19.1663 28.75C19.1663 29.35 18.5663 29.75 18.0163 29.5167C15.9997 28.65 13.3663 27.85 11.533 27.6167L11.2163 27.5834C10.1997 27.45 9.36634 26.5 9.36634 25.4667V12.6334C9.36634 11.35 10.3997 10.4 11.6663 10.5C13.7497 10.6667 16.833 11.6667 18.7663 12.7667C19.033 12.9167 19.1663 13.2 19.1663 13.4834V28.75ZM30.633 25.45C30.633 26.4834 29.7997 27.4334 28.783 27.5667L28.433 27.6C26.6163 27.85 23.9997 28.6334 21.983 29.4834C21.433 29.7167 20.833 29.3167 20.833 28.7167V13.4667C20.833 13.1667 20.983 12.8834 21.2497 12.7334C23.183 11.65 26.1997 10.6834 28.2497 10.5H28.3163C29.5997 10.5 30.633 11.5334 30.633 12.8167V25.45Z" fill="#546FFF"/>
+				</svg>&nbsp&nbsp
+				<p class="title">Task Manager</p>
+			</div>	
+			<nav class="navigation">
+				<ul class="menu">
+					<li class="menu-li activ-li overview">
+						<svg class="activ-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M17 10H19C21 10 22 9 22 7V5C22 3 21 2 19 2H17C15 2 14 3 14 5V7C14 9 15 10 17 10Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M5 22H7C9 22 10 21 10 19V17C10 15 9 14 7 14H5C3 14 2 15 2 17V19C2 21 3 22 5 22Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M6 10C8.20914 10 10 8.20914 10 6C10 3.79086 8.20914 2 6 2C3.79086 2 2 3.79086 2 6C2 8.20914 3.79086 10 6 10Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M18 22C20.2091 22 22 20.2091 22 18C22 15.7909 20.2091 14 18 14C15.7909 14 14 15.7909 14 18C14 20.2091 15.7909 22 18 22Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>&nbsp&nbsp
+						<p class="activ-p lng-overview">Overview</p>
+					</li>
+					<li class="menu-li task">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M22 16.7399V4.66994C22 3.46994 21.02 2.57994 19.83 2.67994H19.77C17.67 2.85994 14.48 3.92994 12.7 5.04994L12.53 5.15994C12.24 5.33994 11.76 5.33994 11.47 5.15994L11.22 5.00994C9.44 3.89994 6.26 2.83994 4.16 2.66994C2.97 2.56994 2 3.46994 2 4.65994V16.7399C2 17.6999 2.78 18.5999 3.74 18.7199L4.03 18.7599C6.2 19.0499 9.55 20.1499 11.47 21.1999L11.51 21.2199C11.78 21.3699 12.21 21.3699 12.47 21.2199C14.39 20.1599 17.75 19.0499 19.93 18.7599L20.26 18.7199C21.22 18.5999 22 17.6999 22 16.7399Z" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M12 5.48999V20.49" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M7.75 8.48999H5.5" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M8.5 11.49H5.5" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>&nbsp&nbsp
+						<p class="lng-task">Task</p>
+					</li>
+					<li class="menu-li mentors">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M21.0802 8.58003V15.42C21.0802 16.54 20.4802 17.58 19.5102 18.15L13.5702 21.58C12.6002 22.14 11.4002 22.14 10.4202 21.58L4.48016 18.15C3.51016 17.59 2.91016 16.55 2.91016 15.42V8.58003C2.91016 7.46003 3.51016 6.41999 4.48016 5.84999L10.4202 2.42C11.3902 1.86 12.5902 1.86 13.5702 2.42L19.5102 5.84999C20.4802 6.41999 21.0802 7.45003 21.0802 8.58003Z" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M11.9999 11.0001C13.2867 11.0001 14.3299 9.95687 14.3299 8.67004C14.3299 7.38322 13.2867 6.34009 11.9999 6.34009C10.7131 6.34009 9.66992 7.38322 9.66992 8.67004C9.66992 9.95687 10.7131 11.0001 11.9999 11.0001Z" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M16 16.6601C16 14.8601 14.21 13.4001 12 13.4001C9.79 13.4001 8 14.8601 8 16.6601" stroke="#8E92BC" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>&nbsp&nbsp
+						<p class="lng-mentors">Mentors</p>
+					</li>
+					<li class="menu-li message">
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M8.5 19H8C4 19 2 18 2 13V8C2 4 4 2 8 2H16C20 2 22 4 22 8V13C22 17 20 19 16 19H15.5C15.19 19 14.89 19.15 14.7 19.4L13.2 21.4C12.54 22.28 11.46 22.28 10.8 21.4L9.3 19.4C9.14 19.18 8.77 19 8.5 19Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.9965 11H16.0054" stroke="#8E92BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M11.9955 11H12.0045" stroke="#8E92BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M7.99451 11H8.00349" stroke="#8E92BC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>&nbsp&nbsp
+						<p class="lng-message">Message</p>
+					</li>
+					<li class='menu-li settings'>
+						<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M2 12.8801V11.1201C2 10.0801 2.85 9.22006 3.9 9.22006C5.71 9.22006 6.45 7.94006 5.54 6.37006C5.02 5.47006 5.33 4.30006 6.24 3.78006L7.97 2.79006C8.76 2.32006 9.78 2.60006 10.25 3.39006L10.36 3.58006C11.26 5.15006 12.74 5.15006 13.65 3.58006L13.76 3.39006C14.23 2.60006 15.25 2.32006 16.04 2.79006L17.77 3.78006C18.68 4.30006 18.99 5.47006 18.47 6.37006C17.56 7.94006 18.3 9.22006 20.11 9.22006C21.15 9.22006 22.01 10.0701 22.01 11.1201V12.8801C22.01 13.9201 21.16 14.7801 20.11 14.7801C18.3 14.7801 17.56 16.0601 18.47 17.6301C18.99 18.5401 18.68 19.7001 17.77 20.2201L16.04 21.2101C15.25 21.6801 14.23 21.4001 13.76 20.6101L13.65 20.4201C12.75 18.8501 11.27 18.8501 10.36 20.4201L10.25 20.6101C9.78 21.4001 8.76 21.6801 7.97 21.2101L6.24 20.2201C5.33 19.7001 5.02 18.5301 5.54 17.6301C6.45 16.0601 5.71 14.7801 3.9 14.7801C2.85 14.7801 2 13.9201 2 12.8801Z" stroke="#8E92BC" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+						</svg>&nbsp&nbsp
+						<p class="lng-settings">Settings</p>
+					</li>
+				</ul>
+			</nav>			
+			<img src="./img/Question.svg" alt="Question" class="help-svg">
+			<div class="help-center">					
+				<p>Help Center</p>
+				<p>Having Trouble in Learning. Please contact us for more questions.</p>
+				<a id="btn-help" href="mailto:angelaxel86@gmail.com">Go To Help Center</a>
+			</div>
+		</div>
+		<main class="box">
+			<header class="head">
+				<div class="avatar">
+					<div class="menu-icon">
+						<span></span>
+					</div>
+					<div class="head-text">
+						<p>Hi, User Name</p>
+						<p>Let's finish your task today!</p>
+					</div>
+					<div class="avatar-box btn-group dropstart">						
+						<div class="bell">
+							<img src="./img/notif.svg" alt="bell">
+						</div>
+						<div class="avatar-img btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+							<img src="./img/avatar.png" alt="avatar" >
+						</div>
+						<ul class="dropdown-menu head-dropdown">
+							<li>
+								<button class="btn-logout">Logout</button>
+							</li>
+							<li>
+								<button class="btn-create-about">About yourself</button>
+							</li>
+							<li>
+								<label for="input-change-avatar">
+									<span class="change-avatar">Change avatar</span>
+									<input type="file" id="input-change-avatar">
+								</label>
+							</li>							
+						</ul>
+					</div>
+					<div class="about-yourself-box">
+						<textarea  id="change-about-yourself" cols="32" rows="10"></textarea>
+						<button class="btn-save">Save</button>
+					</div>
+				</div>
+				<div class="head-box">
+					<div class="search">
+						<input type="search" class="input-search">
+					</div>
+					<div class="sort">
+						<div class="dropdown">
+  							<button class="btn dropdown-toggle btn-sort" type="button" data-bs-toggle="dropdown" aria-expanded="false">Category
+  							</button>
+							<ul class="dropdown-menu">
+								<li>
+							   		<input class="form-check-input" type="radio" name='speciality' id="all-speciality">
+  									<label class="form-check-label" for="all-speciality">All Speciality</label>
+							   </li>
+							   <li class="li-my-tasks">
+							   		<input class="form-check-input" type="radio" name='speciality' id="my-tasks">
+  									<label class="form-check-label" for="my-tasks">My Tasks</label>
+							   </li>
+							    <li class="li-tasks-in-progress">
+							   		<input class="form-check-input" type="radio" name='speciality' id="tasks-in-progress">
+  									<label class="form-check-label" for="tasks-in-progress">Tasks In Progress</label>
+							   </li>
+							   <li>
+							   		<input class="form-check-input" type="radio" name='speciality' id="design">
+  									<label class="form-check-label" for="design">UI UX Design</label>
+							   </li>
+							   <li>
+							   		<input class="form-check-input" type="radio" name='speciality' id="web-developer">
+  									<label class="form-check-label" for="web-developer">Web Developer</label>
+							   </li>
+							    <li>
+							   		<input class="form-check-input" type="radio" name='speciality' id="apps-design">
+  									<label class="form-check-label" for="apps-design">Apps Design</label>
+							   </li>							    							   
+							 </ul>
+						</div>
+						<button class="btn-sort-by"></button>
+					</div>
+				</div>
+			</header>
+			<div id="content">
+				<div class="setting-activ">
+					<div class="div-settings-top">
+						<p class="general setting-p setting-p-activ lng-general">General</p>
+						<p class="notification setting-p lng-notification">Notification</p>
+					</div>
+					<div class="setting-form-general">
+						<p>
+							<label class="lng-language" for="change-lang">Language</label><br>
+							<select id="change-lang">
+								<option value="en" selected>English(Defult)</option>								
+								<option value="ua">Українська</option>
+							</select>
+						</p>
+						<p>
+							<label class="lng-timezone" for="timezone">Timezone</label><br>
+							<select id="timezone">
+								<option value="en" selected>English(Defult)</option>						
+								<option value="ua">Українська</option>
+							</select>
+						</p>
+						<p>
+							<label class="lng-time-format">Time Format</label><br>
+							<div class="timezone-radio">
+								<label class="radio radio-activ">24 Hours
+									<input class="input-radio" type="radio" name="timezone" id="t24" value="24" checked="true">
+								</label>
+								<label class="radio">12 Hours
+									<input class="input-radio" type="radio" name="timezone" id="t12" value="12">
+								</label>
+							</div>		
+						</p>
+					</div>
+					<div class="setting-form-notification">						
+						<div class="settings-check form-check form-switch">
+  							<input class="form-check-input" type="checkbox" id="message" >
+ 							<label class="form-check-label lng-message" for="message">Message</label>
+						</div>
+						<div class="settings-check form-check form-switch">
+  							<input class="form-check-input" type="checkbox" id="task-update">
+ 							<label class="form-check-label lng-task-update" for="task-update">Task Update</label>
+						</div>
+						<div class="settings-check form-check form-switch">
+  							<input class="form-check-input" type="checkbox" id="task-deadline">
+ 							<label class="form-check-label lng-task-deadline" for="task-deadline">Task Deadline</label>
+						</div>
+						<div class="settings-check form-check form-switch">
+  							<input class="form-check-input" type="checkbox" id="mentor-help">
+ 							<label class="form-check-label lng-mentor-help" for="mentor-help">Mentor Help</label>
+						</div>
+					</div>			
+					<button class="btn-settings">Save Changes</button>
+				</div>
+				<div class="overview-activ">
+					<div class="activity">
+						<div class="running">
+							<div class="running-task">
+								<p class="lng-running-task">Running Task</p>
+								<p></p>
+							</div>
+							<div class="diagram" data-percent="0">		
+	    						<div class="piece left"></div>
+	    						<div class="piece right"></div>
+	    						<div class="text">
+						        	<div>
+						            	<b class="percent"></b>
+						        	</div>
+	  					  		</div>
+							</div>
+							<div class="running-p">
+								<p>100</p>
+								<p class="lng-task">Task</p>
+							</div>
+						</div>
+						<div class="schedule">
+							<div class="schedule-p">
+								<p class="lng-activity">Activity</p>
+								<p>
+									<select id="change-week">
+										<option class="lng-this-week" value="now" selected>This Week</option>
+										<option class="lng-last-week" value="last">Last Week</option>							
+									</select>
+								</p>
+							</div>
+							<div class="canvas-box"></div>							
+						</div>
+					</div>
+					<div class="monthly-mentors">
+						<div class="mentors-box">
+							<p class="lng-monthly-mentors">Monthly Mentors</p>
+							<div class="arrows">
+								<button class="mentors-arrow-left"></button>
+								<button class="mentors-arrow-right"></button>
+							</div>
+						</div>
+						<div class="mentors-cards"></div>
+					</div>
+					<div class="upcoming-task">
+						<div class="upcoming-box">
+							<p class="lng-upcoming-task">Upcoming Task</p>
+							<div class="arrows">
+								<button class="upcoming-arrow-left"></button>
+								<button class="upcoming-arrow-right"></button>
+							</div>
+						</div>
+						<div class="task-cards"></div>
+					</div>
+				</div>
+				<div class="task-activ">
+					<div class="detail-task"></div>
+					<div class="explore-task">
+						<div class="time-limit">
+							<div class="time-limit-flex">
+								<p class="time-limit-p"></p>
+								<div class="arrows">
+									<button class="time-limit-arrow-left"></button>
+									<button class="time-limit-arrow-right"></button>
+								</div>
+							</div>
+							<div class="time-limit-cards"></div>
+						</div>
+						<div class="new-task">
+							<div class="new-task-flex">
+								<p class="new-task-p"><span class="lng-all-tasks"></span>
+									<button class="btn-create-task"></button>
+								</p>
+								<div class="arrows">
+									<button class="new-task-arrow-left"></button>
+									<button class="new-task-arrow-right"></button>
+								</div>
+							</div>
+							<div class="new-task-cards"></div>
+						</div>						
+					</div>
+					<div class="create-task">
+						<p class="add-img-p">Add Img</p>
+						<div class="create-task-img">							
+							<div class="add-img">												
+								<img class="task-img" src="./img/picture.png" alt="img">		
+							</div>
+							<div class="choose-img">
+								<button class="choose-arrow-left"></button>
+								<div class="choose-img-box">
+									<img id="select1" class="img-select" src="./img/task-img/Image.png" alt="img">
+									<img id="select2" class="img-select" src="./img/task-img/Image1.png" alt="img">
+									<img id="select3" class="img-select" src="./img/task-img/Image2.png" alt="img">
+									<img id="select4" class="img-select" src="./img/task-img/Image3.png" alt="img">
+									<img id="select5" class="img-select" src="./img/task-img/Image4.png" alt="img">
+									<img id="select6" class="img-select" src="./img/task-img/Image5.png" alt="img">
+									<label class="label-select7">
+									<input type="file" id="select7" class="upload-img"/>
+									</label>
+									<!-- <img id="select7" class="upload-img" src="./img/task-img/choose.png" alt="img">		 -->							
+								</div>
+								<button class="choose-arrow-right"></button>
+							</div>
+						</div>
+						<div class="new-task-box-flex">
+							<div class="new-task-box-left">
+								<p class="task-name-p">
+									<label class="lng-task-name" for="task-name">Task Name</label>
+									<input type="text" id="task-name">
+								</p>
+								<p class="speciality-p">Speciality:</p>
+								<p class="speciality-p-text" ></p>
+								<div class="btns-speciality">
+									<button class="btn-spec">UI UX Design</button>
+									<button class="btn-spec" >Web Developer</button>
+									<button class="btn-spec" >Apps Design</button>
+								</div>								
+								<p class="deadline-p">
+									<label class="lng-deadline" for="datepicker"></label>
+									<input type="datetime-local" id="datepicker">
+								</p>
+								<p class="description">Description:</p>
+								<textarea class="description-text" rows="10" cols="50" name="text"></textarea>
+							</div>
+							<div class="new-task-box-right">
+								<p class="essence">Essence of Assessment:</p>
+								<p class="essence-task-name-p">
+									<label class="lng-task-name" for="task-name1"></label>
+									<input type="text" id="task-name1" class="essence-tasks">
+								</p>
+								<p class="essence-task-name-p">
+									<label class="lng-task-name" for="task-name2"></label>
+									<input type="text" id="task-name2" class="essence-tasks">
+								</p>
+								<p class="essence-task-name-p">
+									<label class="lng-task-name" for="task-name3"></label>
+									<input type="text" id="task-name3" class="essence-tasks">
+								</p>
+								<p class="essence-task-name-p">
+									<label class="lng-task-name" for="task-name4"></label>
+									<input type="text" id="task-name4" class="essence-tasks">
+								</p>
+								<p class="essence-task-name-p">
+									<label class="lng-task-name" for="task-name5"></label>
+									<input type="text" id="task-name5" class="essence-tasks">
+								</p>
+								<div class="error-message"></div>
+								<button class="btn-create-new-task">Create New Task</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="mentors-activ">
+					<div class="recent-mentors">
+						<div class="recent-mentors-flex">
+							<p class="recent-mentors-p"></p>
+							<div class="arrows">
+									<button class="recent-mentors-arrow-left"></button>
+									<button class="recent-mentors-arrow-right"></button>
+								</div>
+						</div>
+						<div class="recent-mentors-cards"></div>
+					</div>					
+					<div class="mentors-container">
+						<p class="lng-mentors mentors-p">Mentors</p>
+						<div class="mentor-cards-grid"></div>
+					</div>
+				</div>
+				<div class="message-activ">
+					<div class="message-search-name">
+						<input type="search" class="input-search-name" placeholder="Searche Name">
+						<div class="mentor-list"></div>
+						<!-- <div class="message-name-mentors"></div> -->
+					</div>
+					<div class="chat">
+						<div class="chat-header">
+							<div class="chat-back">
+								<img src="./img/arrowleft.svg" alt="back">
+							</div>
+							<div class="chat-header-img">
+								<img src="./img/avatar.png" alt="avatar">
+							</div>
+							<p class="chat-header-name"></p>
+						</div>
+						<div class="chat-message"></div>
+						<div class="send">
+							<textarea type="text" class="input-send" placeholder="Send your message…"></textarea>
+							<div class="btn-send-box">
+								<button class="btn-send"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<div class="task-today-box">
+			<div class="calendar-box">  					
+    				<div class="calendar-flex">
+    					<img class="calendar-left" src="./img/left.svg" alt="left"><p class="calendar-month"></p><img class="calendar-right" src="./img/right.svg" alt="right">
+    				</div>
+    				<div id="calendar">
+    					<div class="tr">
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>
+	    					<div class="td">
+	    						<div class="calendar-day"></div>
+	    						<div class="calendar-number"></div>
+	    					</div>	    					
+    					</div>				
+				</div>
+			</div>
+			<div class="task-today">
+				<div class="task-today-top">
+					<p class="lng-task-today">The deadline is three days</p>
+					<div class="task-today-arrows">
+						<img class="arrow-up" src="./img/up.svg" alt="up">
+						<img class="arrow-down" src="./img/down.svg" alt="down">
+					</div>
+					<div class="task-today-ellipsis">...</div>
+				</div>				
+				<div class="task-today-cards"></div>
+				<div class="detail-task-today">
+					<div class="detail-task-today-flex">
+						<p class="lng-details-task"></p>
+						<p class="task-speciality"></p>
+					</div>
+					<div class="details"></div>
+				</div>
+				<button class="btn-details">Go To Detail</button>
+			</div>
+		</div>		
+	</div>
+
+	<script src="./script/lang.js"></script>	
+	<script src="./script/script.js"></script>
+	<script src="./script/settings.js"></script>
+	<script src="./script/overview.js"></script>
+	<script src="./script/task.js"></script>
+	<script src="./script/mentors.js"></script>
+	<script src="./script/message.js"></script>
+</body>
+</html>
+

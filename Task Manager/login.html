@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="./styles/login.css">
+	<title>Task Meneger</title>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="login-box">
+			<div class="title-login">
+				<p class="title-login-p">Need webdesign for you business? <br> <span class="title-login-b">Task Meneger</span><br> will help you.</p>				
+				<img class="img-logo" src="./img/book.svg" alt="logo">
+				<a class="link-email" href="mailto:angelaxel86@gmail.com">angelaxel86@gmail.com</a>
+			</div>	
+			<div class="sign-up">
+				<div class="new-user">					
+					<div class="upload-avatar-flex">
+						<label class="upload-avatar" for="addImage">
+							<input type="file" id="addImage"/>
+						</label>
+					</div>					
+					<p class="mandatory-field"><span class="red-span">*</span>Mandatory field</p>
+					<p class="title-p">
+						<label for="email">Email<span class="red-span">*</span></label>
+						<input type="email" id="email" placeholder="email@com.ua">
+					</p>
+					<p class="title-p">
+						<label for="name">Name<span class="red-span">*</span></label>
+						<input type="text" id="name" placeholder="Enter your name or nickname">
+					</p>
+					<p class="title-p">
+						<label for="password">Password<span class="red-span">*</span></label>
+						<input type="password" id="password" placeholder="Enter your password">
+					</p>
+					<p class="title-p">
+						<label for="repeat-password">Repeat password<span class="red-span">*</span></label>
+						<input type="password" id="repeat-password" placeholder="Repeat password">
+					</p>
+					<p class="speciality-p"><span class="red-span">*</span>Speciality:</p>
+					<p class="speciality-p-text"></p>
+					<div class="btns-speciality">
+						<button class="btn-spec">UI UX Design</button>
+						<button class="btn-spec">Web Developer</button>
+						<button class="btn-spec">Apps Design</button>
+					</div>
+					<p class="title-p">About yourself:</p>
+					<textarea name="text" class="about-yourself" cols="55" rows="10"></textarea>				
+					<button class="create-new-user">Create new account</button>
+					<p class="btn-back">Already have an account? Login</p>
+				</div>
+				<div class="login">
+					<p class="login-p">Log-in</p>
+					<p class="title-p-login">
+						<label for="login-name">Name<span class="red-span">*</span></label>
+						<input type="text" id="login-name" placeholder="Enter your name or nickname">
+					</p>
+					<p class="title-p-login">
+						<label for="login-password">Password<span class="red-span">*</span></label>
+						<input type="password" id="login-password" placeholder="Enter your password">
+					</p>
+					<p class="error-text">Wrong password or username</p>					
+					<button class="btn-sign-up">Login</button>
+					<p class="login-new-user">Don`t have an account? Signup Here</p>
+				</div>	
+			</div>
+		</div>	
+	</div>
+
+	<script src="./script/login.js"></script>
+</body>
+</html>
+

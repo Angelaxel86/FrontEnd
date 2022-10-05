@@ -1,0 +1,113 @@
+.mentors-activ{
+	display: none;
+	padding: 32px;
+}
+
+.recent-mentors-flex{
+	display: flex;
+	justify-content: space-between;
+}
+
+.recent-mentors-p{
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
+.recent-mentors-cards{
+	white-space: nowrap;
+    height: 160px;
+    width: 1125px;
+    overflow: hidden;
+}
+
+.mentors-container{
+	margin-top: 32px;
+}
+
+.mentors-p{
+	font-weight: 600;
+	font-size: 1.5rem;
+}
+
+.mentor-cards-grid{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+	overflow-x: hidden;
+	height: 480px;
+}
+
+.about-yourself{
+	display: block;
+	margin: 24px 0;
+	font-weight: 500;
+	font-size: 0.875rem;
+	color: #8E92BC;
+}
+
+.mentor-card-all{
+	background-color: var(--color-fone);
+    width: 354px;
+    height: 228px;
+    border-radius: 10px;
+    padding: 24px;       
+}
+
+.about-yourself{
+	width: 306px;
+	height: 60px;
+	margin: 24px 0 0 0;	
+	overflow: hidden;
+	color: #8E92BC;
+	font-weight: 500;
+	font-size: 0.875rem;
+	-webkit-line-clamp: 2;
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	line-height: 28px;
+	cursor: pointer;
+}
+
+.mentor-card-all-about{
+	display: none;
+}
+
+.about-text{
+	cursor: pointer;
+	font-weight: 500;
+	font-size: 0.75rem;
+	color: #8E92BC;
+	display: block;
+}
+
+.li-my-tasks, .li-tasks-in-progress{
+	display: none;
+}
+
+@media screen and (max-width: 375px){
+
+	.recent-mentors-cards,
+	.recent-mentors-flex{
+		width: 327px;
+	}
+
+	.mentors-activ{
+		padding: 16px;
+		margin-top: 267px;
+	}
+
+	.mentor-cards-grid{
+		display: block;
+		overflow-x: clip;
+		height: 100%;
+
+	}
+
+	.mentor-card-all{
+		width: 327px;
+		margin-bottom: 32px;
+		
+	}
+
+
+}

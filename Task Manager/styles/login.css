@@ -1,0 +1,287 @@
+html{
+	font-size: 16px;
+	font-family: 'Rubik', sans-serif;
+}
+
+.wrapper{
+	margin: 0 auto;
+	height: 820px;
+	width: 1300px;
+	background-color: #5B86E5;
+	padding: 70px 80px;
+	box-sizing: border-box;
+}
+
+.login-box{
+	display: flex;
+	background-color: #abc1f2;
+	height: 100%;
+	justify-content: space-between;
+	border-radius: 10px;
+}
+
+.title-login{
+	width: 280px;
+	margin: 50px;
+}
+
+.title-login-p{
+	color: white;
+	font-size: 2rem;
+	margin: 70px 0;
+}
+
+.img-logo{
+	width: 150px;
+	margin: 0px 60px 125px;
+}
+
+.link-email{
+	margin-left: 55px;
+    font-size: 0.875rem;
+    text-decoration: none;
+    color: white;
+}
+
+.title-login-b{
+	color: #5B86E5;	
+}
+
+.sign-up{
+	width: 730px;	
+	background-color: white;
+	border-radius: 20px 10px 10px 20px;	
+}
+
+.upload-avatar{
+	width: 100px;
+	height: 100px;		
+	border-radius: 50%;
+	border: 2px solid grey;
+	background-image: url(../img/upload-avatar.jpg);
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.upload-avatar img{
+	width: 100%;
+	border-radius: 50%;
+}
+
+#addImage{
+	opacity: 0;
+}
+.red-span{
+	color: red;
+}
+
+#email, #name, #password, #repeat-password, #login-name, #login-password{
+	border-radius: 10px;
+	padding-left: 10px;
+	height: 20px;
+	width: 200px;
+	outline: none;
+}
+
+#login-name{
+	margin-left: 30px;
+}
+
+#password{
+	margin-left: 57px;
+}
+
+#name{
+	margin-left: 86px;
+}
+
+#email{
+	margin-left: 88px;
+}
+
+.mandatory-field{
+	font-weight: 600;
+	margin-left: 100px;
+}
+
+.speciality-p{
+	display: inline-block;
+	margin-left: 100px;
+}
+
+.btns-speciality{
+	margin-left: 100px;
+}
+
+.speciality-p-text{
+	display: inline-block;
+	width: 120px;
+	margin-left: 10px;
+	color: #54577A;	
+}
+
+.btn-spec{
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.create-new-user{
+	width: 200px;
+	height: 30px;
+    margin: 10px 0 0 240px;
+    font-weight: 600;
+    border-radius: 10px;
+    background-color: #546FFF;
+    color: white;
+    font-size: 1rem;    
+}
+
+.new-user{
+	display: none;
+	padding-top: 16px;
+}
+
+.login-new-user{
+	cursor: pointer;
+	color: #04A4F4;
+	margin-left: 50px;
+}
+
+.btn-back{
+	cursor: pointer;
+    color: #04A4F4;
+    margin-left: 215px;
+}
+
+.btn-sign-up{
+	margin: 10px 0 0 83px;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 30px;
+    width: 217px;
+	background-color: #546FFF;
+	color: white;
+	border-radius: 10px;
+}
+
+.error{
+	border: 2px solid red;
+}
+
+.success{
+	border: 2px solid #1bd71b;
+}
+
+.error-text{
+	margin-left: 80px;
+	color: red;
+	display: none;
+}
+
+.login-p{
+	font-weight: 600;
+	margin-bottom: 60px;	
+    font-size: 1.4rem;
+}
+
+.login{
+	margin: 190px 130px;
+}
+
+.about-yourself{
+	display: block;
+	margin-left: 100px;
+}
+
+.title-p{
+	margin: 10px 0 0 100px ;
+}
+
+.upload-avatar-flex{
+	display: flex;
+	margin-left: 290px;
+}
+
+@media screen and (max-width: 375px){
+
+	body{
+		margin: 0;
+	}
+
+	.wrapper{
+		width: 375px;
+		height: auto;
+		padding: 16px 20px;
+	}
+
+	.login-box{
+		display: block;
+	}
+
+	.title-login-p{		
+    	margin: 50px 0;
+	}
+
+	.sign-up{
+		width: 335px;
+		border-radius: 10px;
+	}
+
+	.title-login{
+		margin: 40px;
+	}
+
+	.login{
+		margin: 0;
+		width: 335px;
+		padding: 16px 10px 0;
+	}
+
+	.login-p{
+		text-align: center;
+		margin-bottom: 40px;
+		width: 310px;
+	}
+
+	.img-logo{
+		margin: 0px 60px 0px;
+	}
+
+	.login-new-user{
+		margin-left: 24px;
+	}
+
+	.upload-avatar-flex{
+		margin-left: 110px;
+	}
+
+	.new-user{
+		margin: 0 16px;
+	}
+
+	.mandatory-field,
+	.title-p,
+	.speciality-p,
+	.btns-speciality,
+	.about-yourself,
+	.create-new-user,
+	.btn-back{
+		margin-left: 0;
+	}
+
+	#email,
+	#password,
+	#name{
+		margin-left: 0;
+	}
+
+	.new-user label{
+		margin-right: 50px;
+	}
+
+	.btn-spec{
+		margin-right: -1px;
+	}
+	
+}
